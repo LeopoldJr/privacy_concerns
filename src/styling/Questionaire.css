@@ -2,10 +2,16 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
+    min-width: 40vw;
 }
 .Section-Title{
     padding-top: 2rem;
     /* padding-bottom: .5rem; */
+}
+
+.Section-Title:hover{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #0d6efd;
 }
 
 .slider-div{
@@ -16,4 +22,16 @@
 
 .save-button{
     margin-top: 2rem;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.Overlay-placement{
+    width:50%;
+}
+
+.save-button-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 }

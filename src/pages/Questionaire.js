@@ -3,36 +3,58 @@ import {
     useNavigate
 } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
-import { Col, Row, Form, Check } from "react-bootstrap";
+import { Col, Row, Form, Check, OverlayTrigger } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styling/Questionaire.css';
 // import FormCheck from 'react-bootstrap/FormCheck'
 import useInputState from "../hooks/useInputState";
 //   import { useNavigate } from "react-router-dom";
+// import Overlay from 'react-bootstrap/Overlay'
+// import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Popover from 'react-bootstrap/Popover'
 
-const Questionaire = ({ callBack, handleInputChange3, handleInputChange4, handleInputChange5, data, setData, data2, toggleData2, reset2, data3, toggleData3, reset3, data4, toggleData4, reset4, data5, toggleData5, reset5 }) => { //
+const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChange5, data, data2, data3, data4, data5, toggleData2, setData}) => { //
     let navigate = useNavigate();
         
-    // setData(idata);
     function handleSubmit(e) {
-        // console.log(data)
-        // callBack(data);
-        // callBack(0);
         console.log(`${data3}, ${data4}, ${data5}`);
         navigate("/Confirmation");
+        
 
     }
-    function handleChange4(){
-        if (data5) toggleData5();
-        if (data3) toggleData3();
-        toggleData4();
-
-    }
+    const popover1 = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Location Tracking</Popover.Header>
+          <Popover.Body>
+            Description of what Location Tracking does and what information is shared.
+          </Popover.Body>
+        </Popover>
+    );
+    const popover2 = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Sample 2</Popover.Header>
+          <Popover.Body>
+            Description of what Sample 2 does and what information is shared.
+          </Popover.Body>
+        </Popover>
+    );
+    const popover3 = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Sample 3</Popover.Header>
+          <Popover.Body>
+            Description of what Sample 3 does and what information is shared.
+          </Popover.Body>
+        </Popover>
+    );
 
     return (
         <div className="Questionaire">
             <Form>
+            <div className="Overlay-placement">
+            <OverlayTrigger trigger="click" placement="right" overlay={popover1}>
                 <h2 className="Section-Title">Location Tracking</h2>
+            </OverlayTrigger>
+            </div>
             <Form.Check 
                 custom
                 type="switch"
@@ -42,8 +64,11 @@ const Questionaire = ({ callBack, handleInputChange3, handleInputChange4, handle
                 onChange = {toggleData2}
             />
             </Form>
-            {/* <fieldset> */}
-            <h2 className="Section-Title">Driving Mode</h2>
+            <div className="Overlay-placement">
+            <OverlayTrigger trigger="click" placement="right" overlay={popover2}>
+                <h2 className="Section-Title">Sample 2</h2>
+            </OverlayTrigger>
+            </div>
             <Form.Group as={Row} className="mb-3">
                 <Col sm={10}>
                     <Form.Check
@@ -72,17 +97,20 @@ const Questionaire = ({ callBack, handleInputChange3, handleInputChange4, handle
                     />
                 </Col>
             </Form.Group>
-            {/* </fieldset> */}
             
-            <h2 className="Section-Title">Distance From Car In Front</h2>
+            <div className="Overlay-placement">
+            <OverlayTrigger trigger="click" placement="right" overlay={popover3}>
+                <h2 className="Section-Title">Sample 3</h2>
+            </OverlayTrigger>
+            </div>
             <div className="slider-div">
                 <Form.Label >0</Form.Label>
                 <Form.Range  defaultValue={data} onChange={setData}/>
                 <Form.Label >100</Form.Label>
             </div>
-
-            <Button className="save-button" onClick = {handleSubmit}>Save Changes</Button>
-            {/* value={data} */}
+            <div className="save-button-div">
+                <Button className="save-button" onClick = {handleSubmit}>Save Changes</Button>
+            </div>
         </div>
     )
 }
