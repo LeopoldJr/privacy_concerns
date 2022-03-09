@@ -1,0 +1,19 @@
+.Questionaire{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+.Section-Title{
+    padding-top: 2rem;
+    /* padding-bottom: .5rem; */
+}
+
+.slider-div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.save-button{
+    margin-top: 2rem;
+}
