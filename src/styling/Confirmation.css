@@ -1,7 +1,12 @@
 .Confirmation{
     padding-top: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
 .return-button{
     margin-top: 1rem;
+    font-size: 110%;
+    font-weight: bold;
 }

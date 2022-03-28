@@ -33,7 +33,7 @@
 .save-button-div{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: c
+    justify-content: center;
     
     
 }
