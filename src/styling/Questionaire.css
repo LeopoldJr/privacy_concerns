@@ -27,11 +27,17 @@
 }
 
 .Overlay-placement{
-    width:50%;
+    width:60%;
 }
 
 .save-button-div{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: c
+    
+    
+}
+.specific-slider-label-padding{
+    /* margin-left: 1rem; */
+    padding-left: 1rem;
 }

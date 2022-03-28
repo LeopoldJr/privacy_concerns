@@ -1,7 +1,6 @@
 import React from "react";
 import Confirmation from "./Confirmation";
 import Questionaire from "./Questionaire";
-import { render } from "react-dom";
 import {
   Routes,
   Route,
