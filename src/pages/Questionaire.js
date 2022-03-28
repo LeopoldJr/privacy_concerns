@@ -56,7 +56,7 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
             {/* Switch for turning Location Tracking On/Off */}
             <Form>
             <div className="Overlay-placement">
-            <OverlayTrigger trigger="click" placement="right" overlay={popover1}>
+            <OverlayTrigger trigger="click" placement="bottom-start" overlay={popover1}>
                 <h2 className="Section-Title">Location Tracking</h2>
             </OverlayTrigger>
             </div>
@@ -71,7 +71,7 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
             </Form> 
             {/* Slider for Location Tracking Precision */}
             <div className="Overlay-placement">
-            <OverlayTrigger trigger="click" placement="right" overlay={popover2}>
+            <OverlayTrigger trigger="click" placement="bottom-start" overlay={popover2}>
                 <h2 className="Section-Title">Location Tracking Precision</h2>
             </OverlayTrigger>
             </div>
@@ -83,7 +83,7 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
 
             {/* Options for Data Sharing */}
             <div className="Overlay-placement">
-            <OverlayTrigger trigger="click" placement="right" overlay={popover3}>
+            <OverlayTrigger trigger="click" placement="bottom-start" overlay={popover3}>
                 <h2 className="Section-Title">Data Sharing</h2>
             </OverlayTrigger>
             </div>
