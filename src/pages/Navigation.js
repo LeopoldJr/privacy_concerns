@@ -16,7 +16,7 @@ import "../styling/Navigation.css";
 
 export default function Navigation(){
 const [data, setData] = useInputState(20);
-const [data2, toggleData2] = useToggleState(false);
+const [data2, toggleData2] = useToggleState(true);
 const [data3, toggleData3, reset3] = useToggleState(false);
 const [data4, toggleData4, reset4] = useToggleState(false);
 const [data5, toggleData5, reset5] = useToggleState(false);
