@@ -13,7 +13,7 @@ import useInputState from "../hooks/useInputState";
 // import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 
-const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChange5, data, data2, data3, data4, data5, toggleData2, setData}) => { //
+const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChange5, data, data2, data3, data4, data5, toggleData2, data6, toggleData6, setData}) => { //
     let navigate = useNavigate();
         
     function handleSubmit(e) {
@@ -50,6 +50,14 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
           </Popover.Body>
         </Popover>
     );
+    const popover4 = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Sharing Location Data Accross Users</Popover.Header>
+          <Popover.Body>
+          Sharing data with other users of this vehicle will allow them to see where the car is at all times, as well as past location data.
+          </Popover.Body>
+        </Popover>
+    );
 
     return (
         <div className="Questionaire">
@@ -77,9 +85,37 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
             </div>
             <div className="slider-div">
                 <Form.Label >0 Mile Radius</Form.Label>
+                <div></div>
                 <Form.Range  defaultValue={data} onChange={setData} disabled={!data2}/>
-                <Form.Label className='specific-slider-label-padding'>1/2 Mile Radius</Form.Label>
+                <Form.Label className='specific-slider-label-padding'>1 Mile Radius</Form.Label>
             </div>
+            <div className="slider-labels-plus">
+                <p>|</p>
+                <p>|</p>
+                <p>|</p>
+            </div>
+            <div className="slider-labels">
+                <p>0.25</p>
+                <p>0.5</p>
+                <p>0.75</p>
+            </div>
+
+            <Form>
+            <div className="Overlay-placement">
+            <OverlayTrigger trigger="click" placement="bottom-start" overlay={popover4}>
+                <h2 className="Section-Title">Share Location Data Across Users</h2>
+            </OverlayTrigger>
+            </div>
+            <Form.Check 
+                custom
+                type="switch"
+                id="custom-switch"
+                // label="Location Tracking"
+                defaultChecked = {data6}
+                onChange = {toggleData6}
+                disabled={!data2}
+            />
+            </Form> 
 
             {/* Options for Data Sharing */}
             <div className="Overlay-placement">
@@ -91,7 +127,7 @@ const Questionaire = ({ handleInputChange3, handleInputChange4, handleInputChang
                 <Col sm={10}>
                     <Form.Check
                         type="radio"
-                        label="No shared data"
+                        label="Data not shared with company"
                         name="formHorizontalRadios"
                         id="formHorizontalRadios1"
                         defaultChecked = {data3}

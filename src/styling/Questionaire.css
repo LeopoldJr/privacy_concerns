@@ -41,3 +41,22 @@
     /* margin-left: 1rem; */
     padding-left: 1rem;
 }
+
+.slider-labels{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: nowrap row;
+    padding-top: 0px;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-top: -3%;
+}
+.slider-labels-plus{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: nowrap row;
+    padding-top: 0px;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-top: -5%;
+}
